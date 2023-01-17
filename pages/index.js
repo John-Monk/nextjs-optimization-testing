@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Button from '@/components/Button';
-import logo from '../public/Roofing-logo.png';
+import logo from '../public/Roofer-RoofingLogo.svg';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -59,7 +59,7 @@ export default function Home() {
 const Wrapper = styled.div`
   .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
-      url(/hero-image.jpg);
+      url(/hero-image.webp);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

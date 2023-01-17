@@ -3,7 +3,7 @@ import Nav from './Nav';
 import styled from 'styled-components';
 import { useState } from 'react';
 import Link from 'next/link';
-import logo from '../public/Roofing-logo.png';
+import logo from '../public/Roofer-RoofingLogo.svg';
 import Image from 'next/image';
 
 export default function Header() {
