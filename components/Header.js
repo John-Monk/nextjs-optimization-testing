@@ -25,7 +25,6 @@ const StyledHeader = styled.header`
   width: 100%;
   background-color: ${props => props.theme.colors.gray};
   padding: 0.75em 0;
-  position: unset;
   z-index: 10;
 
   .container {

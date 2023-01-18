@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
   .section {
     min-height: calc(100vh - 58.6px);
+    z-index: 1;
   }
 
   @media screen and (min-width: 860px) {

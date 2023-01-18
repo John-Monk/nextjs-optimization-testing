@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Button from '@/components/Button';
 import logo from '../public/Roofer-RoofingLogo.svg';
+import background from '../public/hero-image.webp';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -48,6 +49,13 @@ export default function Home() {
             ></path>
           </svg>
         </div>
+        {/* <picture className='background'>
+          <img src="/hero-image.webp" alt="" />
+        </picture> */}
+        <div className="background">
+          <div className="overlay"></div>
+          <Image src="/hero-image.webp" layout={'fill'} objectFit={'cover'} />
+        </div>
       </section>
       <section className="section-two">
         <h1>Section</h1>
@@ -58,18 +66,41 @@ export default function Home() {
 
 const Wrapper = styled.div`
   .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
-      url(/hero-image.webp);
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+      url(/hero-image.webp); */
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: ${props => props.theme.colors.white};
-    z-index: 10;
+    color: ${(props) => props.theme.colors.white};
+    position: relative;
+    clip-path: inset(0 0 0 0);
 
-    .container {
-      width: 80%;
+    .background {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: -1;
+
+      .overlay {
+        z-index: 1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.5)
+        );
+      }
+
+      img {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
     }
 
     .content {
@@ -88,14 +119,14 @@ const Wrapper = styled.div`
 
       Button {
         align-self: flex-start;
-        background: ${props => props.theme.colors.orange};
-        color: ${props => props.theme.colors.white};
+        background: ${(props) => props.theme.colors.orange};
+        color: ${(props) => props.theme.colors.white};
         text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
         /* border: 2px solid white; */
 
         &:hover {
-          background: ${props => props.theme.colors.black};
-          color: ${props => props.theme.colors.white};
+          background: ${(props) => props.theme.colors.black};
+          color: ${(props) => props.theme.colors.white};
           transition: 200ms;
         }
       }
@@ -121,14 +152,15 @@ const Wrapper = styled.div`
 
   .section-two {
     height: 100vh;
-    background: ${props => props.theme.colors.orange};
+    background: ${(props) => props.theme.colors.orange};
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 
     h1 {
       font-size: 5rem;
-      color: ${props => props.theme.colors.white};
+      color: ${(props) => props.theme.colors.white};
     }
   }
 
@@ -190,7 +222,7 @@ const Wrapper = styled.div`
       }
 
       .custom-shape-divider-bottom-1673895580 .shape-fill {
-        fill: ${props => props.theme.colors.orange};
+        fill: ${(props) => props.theme.colors.orange};
       }
     }
   }
